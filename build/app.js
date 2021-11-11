@@ -1,25 +1,19 @@
-class Animal {
-    name;
-    legs;
-    sound;
-    constructor(name, legs, sound) {
-        this.name = name;
-        this.legs = legs;
-        this.sound = sound;
-    }
-    getName() {
-        return this.name;
-    }
-    getLegs() {
-        return this.legs;
-    }
-    getSound() {
-        return this.sound;
-    }
+function writeAlphabetToTheDom() {
+    const alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
+    const keyboard = document.querySelector('#keyboard');
+    alphabet.forEach((element) => {
+        const divKey = document.createElement('div');
+        divKey.id = element;
+        divKey.classList.add('key');
+        divKey.innerHTML = element;
+        keyboard.append(divKey);
+    });
 }
-const animals = [
-    new Animal('dog', 4, 'woof'),
-    new Animal('cat', 4, 'meow'),
-];
-animals.forEach((animal) => console.log('A %s has %s legs and goes %s!', animal.getName(), animal.getLegs(), animal.getSound()));
+function randomNumber(min, max) {
+    return Math.round(Math.random() * (max - min) + min);
+}
+function init() {
+    writeAlphabetToTheDom();
+}
+window.addEventListener('load', init);
 //# sourceMappingURL=app.js.map

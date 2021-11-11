@@ -1,40 +1,36 @@
-class Animal
-{
-  private readonly name: string;
+// Global variables
 
-  private readonly legs: number;
-
-  private readonly sound: string;
-
-  public constructor(name: string, legs: number, sound: string) {
-    this.name = name;
-    this.legs = legs;
-    this.sound = sound;
-  }
-
-  public getName(): string {
-    return this.name;
-  }
-
-  public getLegs(): number {
-    return this.legs;
-  }
-
-  public getSound(): string {
-    return this.sound;
-  }
+/**
+ * Function to write the alphabet keyboard to the DOM
+ */
+function writeAlphabetToTheDom() {
+  const alphabet: string[] = 'abcdefghijklmnopqrstuvwxyz'.split('');
+  const keyboard: HTMLDivElement = document.querySelector('#keyboard');
+  alphabet.forEach((element) => {
+    const divKey: HTMLDivElement = document.createElement('div');
+    divKey.id = element;
+    divKey.classList.add('key');
+    divKey.innerHTML = element;
+    keyboard.append(divKey);
+  });
 }
 
-const animals = [
-  new Animal('dog', 4, 'woof'),
-  new Animal('cat', 4, 'meow'),
-];
+/**
+ * Returns a random number between min and max
+ * @param {number} min - lower boundary
+ * @param {number} max - upper boundary
+ * @returns {number} random number
+ */
+function randomNumber(min: number, max: number): number {
+  return Math.round(Math.random() * (max - min) + min);
+}
 
-animals.forEach(
-  (animal) => console.log(
-    'A %s has %s legs and goes %s!',
-    animal.getName(),
-    animal.getLegs(),
-    animal.getSound(),
-  ),
-);
+/**
+ * Function to initialize the programme
+ */
+function init() {
+  // write the alphabet keyboard to the DOM
+  writeAlphabetToTheDom();
+}
+
+window.addEventListener('load', init);
