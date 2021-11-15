@@ -1,5 +1,8 @@
-// Global variables
+const randomWords: string[] = ["test", "vier", "vijf", "yolooooooo"];
+let attempt: number = 5;
 
+let attempthtml = document.getElementById("attempt").innerHTML;
+console.log(attempthtml);
 /**
  * Function to write the alphabet keyboard to the DOM
  */
