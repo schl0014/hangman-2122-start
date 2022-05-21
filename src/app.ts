@@ -1,5 +1,5 @@
 class Hangman {
-  word: string;
+  private word: string;
 
   randomWords: string[];
 
@@ -24,7 +24,7 @@ class Hangman {
   constructor() {
     this.guessedCharactersInWord = [];
     this.woordenGeraden = [];
-    this.randomWords = ['test', 'vier', 'vijf', 'yolooooooo', 'nike', 'max', 'voetbal', 'vijfentwintig'];
+    this.randomWords = ['jarno'];
     this.attempts = 5;
     this.max = this.randomWords.length - 1;
     this.min = 0;
